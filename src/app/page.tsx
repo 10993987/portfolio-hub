@@ -1,64 +1,94 @@
-import Image from "next/image";
+import { projects } from "@/data/projects";
 
-export default function Home() {
+export default function Portfolio() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-yellow-400 selection:text-black">
+      {/* Мягкое свечение на фоне */}
+      <div className="fixed inset-0 overflow-hidden -z-10">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-600/5 rounded-full blur-[120px]" />
+      </div>
+
+      <main className="max-w-6xl mx-auto px-6 py-20">
+        <header className="mb-32">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="w-12 h-[1px] bg-zinc-700"></span>
+            <h2 className="text-zinc-500 font-mono text-xs uppercase tracking-[0.4em]">
+              Frontend Developer • 2026
+            </h2>
+          </div>
+          
+          {/* Твоё Имя */}
+          <h1 className="text-6xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-10">
+            ANASTASIA <br /> 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 via-zinc-500 to-zinc-800">
+              VIKTOROVA
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="max-w-xl text-zinc-400 text-lg md:text-xl leading-relaxed font-light">
+            Создаю быстрые и эстетичные веб-приложения. <br />
+            Мой стек: <span className="text-white">Next.js, TypeScript, AI Integration.</span>
           </p>
+        </header>
+
+        {/* Сетка проектов */}
+        <div className="flex items-center gap-4 mb-12">
+          <h2 className="text-sm font-black uppercase tracking-widest text-zinc-600">Selected Works</h2>
+          <div className="h-[1px] flex-1 bg-zinc-900"></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, idx) => (
+            <div 
+              key={idx}
+              className="group relative bg-zinc-900/40 border border-zinc-800/50 rounded-[2rem] p-8 hover:bg-zinc-900/60 hover:border-zinc-600 transition-all duration-500 flex flex-col justify-between overflow-hidden backdrop-blur-sm"
+            >
+              <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-20 blur-3xl transition-opacity`} />
+              
+              <div>
+                <div className="flex gap-2 mb-8">
+                  {project.stack.map(s => (
+                    <span key={s} className="text-[9px] font-black uppercase tracking-tighter text-zinc-400 bg-zinc-800/50 px-2 py-1 rounded">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+                <h3 className="text-2xl font-bold mb-3 tracking-tight group-hover:translate-x-1 transition-transform">
+                  {project.title}
+                </h3>
+                <p className="text-zinc-500 text-sm leading-relaxed mb-10">
+                  {project.description}
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <a 
+                  href={project.link} 
+                  target="_blank"
+                  className="bg-zinc-100 text-black px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-yellow-400 transition-colors"
+                >
+                  Launch Site
+                </a>
+                <a 
+                  href={project.github}
+                  target="_blank"
+                  className="text-zinc-600 hover:text-white transition-colors text-[10px] font-bold uppercase tracking-widest"
+                >
+                  Code
+                </a>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        <footer className="mt-40 pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-600 text-[10px] font-bold uppercase tracking-widest">
+          <p>© 2026 Anastasia Viktorova</p>
+          <div className="flex gap-8">
+            <a href="mailto:aviktorova317@gmail.com" className="hover:text-white transition-colors">Email</a>
+            <a href="https://t.me/yay4ogo" className="hover:text-white transition-colors">Telegram</a>
+          </div>
+        </footer>
       </main>
     </div>
   );
