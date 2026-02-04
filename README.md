@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Portfolio Hub
 
-## Getting Started
+**Portfolio Hub** — это элегантная и функциональная платформа для демонстрации ваших проектов, навыков и достижений. Создана для разработчиков и дизайнеров, которые хотят представить свое портфолио в лучшем свете.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠 Технологический стек
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Проект реализован с использованием современных инструментов разработки:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Frontend:** [Например: React 18, Next.js 14]
+* **Стилизация:** [Например: Tailwind CSS / Styled Components]
+* **Анимации:** [Например: Framer Motion]
+* **Управление состоянием:** [Например: Redux Toolkit / Zustand]
+* **Сборка:** Vite / Webpack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Основные возможности
 
-To learn more about Next.js, take a look at the following resources:
+* 📱 **Fully Responsive:** Адаптивная верстка, которая отлично выглядит на любых устройствах.
+* 🌗 **Dark/Light Mode:** Динамическое переключение тем оформления.
+* 📊 **Project Showcase:** Удобные карточки проектов с описанием, тегами технологий и ссылками.
+* ❤️ **Performance:** Высокая скорость загрузки и оптимизация изображений.
+* 📩 **Contact Form:** Рабочая форма обратной связи для потенциальных заказчиков или работодателей.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ❤️ Быстрый старт
 
-## Deploy on Vercel
+### Предварительные требования
+Убедитесь, что у вас установлен **Node.js** версии 18.x или выше.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Установка и запуск
+1. **Клонируйте репозиторий:**
+   ```bash
+   git clone [https://github.com/your-username/portfolio-hub.git](https://github.com/your-username/portfolio-hub.git)
